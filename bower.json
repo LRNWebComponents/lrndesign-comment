@@ -4,7 +4,9 @@
   "main": "lrndesign-comment.html",
   "dependencies": {
     "polymer": "Polymer/polymer#^1.4.0",
-    "lrnsys-behaviors": "LRNWebComponents/lrnsys-behaviors#^1.0.0"
+    "lrnsys-behaviors": "LRNWebComponents/lrnsys-behaviors#^1.0.0",
+    "time-elements": "github/time-elements#^0.6.1",
+    "lrndesign-avatar": "LRNWebComponents/lrndesign-avatar#^0.0.2"
   },
   "devDependencies": {
     "iron-component-page": "PolymerElements/iron-component-page#^1.0.0",

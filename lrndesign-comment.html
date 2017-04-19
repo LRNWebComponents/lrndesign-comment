@@ -1,4 +1,6 @@
 <link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="../lrndesign-avatar/lrndesign-avatar.html">
+<link rel="import" href="../time-elements/time-elements.html">
 
 <!--
 `lrndesign-comment`
@@ -13,8 +15,33 @@ A LRN element
       :host {
         display: block;
       }
+      .comment-left {
+        float: left;
+        display: inline-block;
+      }
+      .comment-right {
+        display: inline-block;
+      }
     </style>
-    <h2>[[title]]</h2>
+    <div class="comment-container">
+      <div class="comment-left">
+        <lrndesign-avatar></lrndesign-avatar>
+      </div>
+      <div class="comment-right">
+        <div class="row-1">
+          <span>{{name}}</span>
+          <relative-time datetime="{{date}}">
+            {{date}}
+          </relative-time>
+        </div>
+        <div class="row-2">
+          <content></content>
+        </div>
+        <div class="row-3">
+          {{links}}
+        </div>
+      </div>
+    </div>
   </template>
 
   <script>
@@ -23,12 +50,20 @@ A LRN element
       is: 'lrndesign-comment',
 
       properties: {
-        title: {
+        avatar: {
+          type: Object,
+        },
+        name: {
           type: String,
-          value: 'lrndesign-comment',
+        },
+        date: {
+          type: String,
+          value: '2014-04-01T16:30:00-08:00',
+        },
+        links: {
+          type: Object,
         },
       },
-
     });
   </script>
 </dom-module>
