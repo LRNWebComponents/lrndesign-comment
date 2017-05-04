@@ -1,0 +1,73 @@
+<link rel="import" href="../polymer/polymer.html">
+
+<!--
+`hax-ajax`
+A LRN element
+
+@demo demo/index.html
+-->
+
+<dom-module id="hax-ajax">
+  <template>
+    <style>
+      :host {
+      }
+    </style>
+    <content></content>
+    <iron-ajax
+      id="haxajax"
+      url="[[url]]"
+      handle-as="json"
+      on-response="haxAjaxResponse"
+      ></iron-ajax>
+  </template>
+
+  <script>
+    Polymer({
+      is: 'hax-ajax',
+      properties: {
+        /**
+         * The url endpoint to save operations once noticed.
+         */
+        url: {
+          type: String
+        },
+        /**
+         * If hax should be hidden or not.
+         */
+        hideHax: {
+          type: Boolean,
+          value: false,
+        }
+      },
+      listeners: {
+        'haxAction': '_triggerHaxSave',
+      },
+      /**
+       * Handle a save event bubbling up from
+       * some place down below in the DOM.
+       */
+      _triggerHaxSave: function(e) {
+        if (e.detail.action == 'save') {
+          console.log(e.detail);
+          let root = this;
+          var params = {};
+          var key;
+          var value;
+          for (i = 0; i < e.detail.attributes.length; i++) {
+            params[e.detail.attributes[i].name] = e.detail.attributes[i].value;
+          }
+          params['innerHTML'] = e.detail.attributes.innerHTML;
+          params['tagName'] = e.detail.attributes.tagName;
+
+          root.$$('#haxajax').params = params;
+          // trigger it to run
+          root.$$('#haxajax').generateRequest();
+        }
+      },
+      haxAjaxResponse: function(e) {
+        console.log('handle ajax response');
+      },
+    });
+  </script>
+</dom-module>

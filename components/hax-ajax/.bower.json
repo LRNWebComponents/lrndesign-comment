@@ -1,0 +1,27 @@
+{
+  "name": "hax-ajax",
+  "description": "A LRN element",
+  "main": "hax-ajax.html",
+  "dependencies": {
+    "polymer": "Polymer/polymer#^1.4.0",
+    "lrnsys-behaviors": "LRNWebComponents/lrnsys-behaviors#^1.0.0",
+    "iron-ajax": "PolymerElements/iron-ajax#^1.4.4"
+  },
+  "devDependencies": {
+    "iron-component-page": "PolymerElements/iron-component-page#^1.0.0",
+    "iron-demo-helpers": "PolymerElements/iron-demo-helpers#^1.0.0",
+    "web-component-tester": "^4.0.0",
+    "webcomponentsjs": "webcomponents/webcomponentsjs#^0.7.0"
+  },
+  "homepage": "https://github.com/LRNWebComponents/hax-ajax",
+  "version": "0.0.3",
+  "_release": "0.0.3",
+  "_resolution": {
+    "type": "version",
+    "tag": "0.0.3",
+    "commit": "4713325ea2e6fdc64ef6431fc8156de4ecf8e35b"
+  },
+  "_source": "https://github.com/LRNWebComponents/hax-ajax.git",
+  "_target": "^0.0.3",
+  "_originalSource": "LRNWebComponents/hax-ajax"
+}
