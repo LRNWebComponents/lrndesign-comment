@@ -1,6 +1,6 @@
 <link rel="import" href="../polymer/polymer.html">
 <link rel="import" href="../lrndesign-avatar/lrndesign-avatar.html">
-<link rel="import" href="../time-elements/time-elements.html">
+<script src="../time-elements/time-elements.js"></script>
 
 <!--
 `lrndesign-comment`
@@ -30,8 +30,7 @@ A LRN element
       <div class="comment-right">
         <div class="row-1">
           <span>{{name}}</span>
-          <relative-time datetime="{{date}}">
-            {{date}}
+          <relative-time datetime$="{{date}}">
           </relative-time>
         </div>
         <div class="row-2">
@@ -52,16 +51,23 @@ A LRN element
       properties: {
         avatar: {
           type: Object,
+          reflectToAttribute: true,
+          notify: true,
         },
         name: {
           type: String,
+          reflectToAttribute: true,
+          notify: true,
         },
         date: {
           type: String,
-          value: '2014-04-01T16:30:00-08:00',
+          value: '2014-04-01T00:00:00.000Z',
+          reflectToAttribute: true,
+          notify: true,
         },
         links: {
           type: Object,
+          notify: true,
         },
       },
     });
